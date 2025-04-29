@@ -22,7 +22,7 @@ function isMobileOrTablet() {
     return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);  
 }
 
-if(!isMobileOrTablet()){
+if(isMobileOrTablet()){
     console.log("detected");
     let button = document.querySelector("#level-div");
     level.innerHTML = "Tap here to Start";
