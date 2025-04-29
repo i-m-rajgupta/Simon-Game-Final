@@ -9,44 +9,31 @@ let levelNum = 0;
 let gameMemory = [];
 let userMemory =[];
 
+let isStarted = false;
 let color;
+
+const Sound1 = new Audio("Click1.wav");
+Sound1.load();
+const Sound2 = new Audio("Click2.wav");
+Sound2.load();
+
 const input = document.getElementById('hidden-input');
-
-function isMobileOrTablet() {
-    const ua = navigator.userAgent;
-  
-    return /Android|iPhone|iPad|iPod|Mobile|Tablet/i.test(ua);
-  }
-  
-  if (isMobileOrTablet()) {
-    console.log("📱 Mobile or tablet detected");
-    input.style.opacity = 1; // make input slightly visible to ensure focus
-    input.focus();
-  } 
-
+input.focus();
  input.addEventListener('input', (e) => {
       if (input.value.length > 0) {
        startGame();
       }
     });     
 function startGame() {
-      levelUp();
+    if(isStarted == false){
+        levelUp();
+        isStarted = true;
       input.blur();         // Remove focus
-      input.style.display = "none"; // Hide input completely 
+      input.style.display = "none";
+     } 
     }
-const Sound1 = new Audio("Click1.wav");
-Sound1.load();
-const Sound2 = new Audio("Click2.wav");
-Sound2.load();
 
-let isStarted = false;
 let body = document.querySelector("body");
-body.addEventListener("keypress",()=>{
-   if(isStarted == false){
-    levelUp();
-    isStarted = true;
-   }
-});
 function levelUp(){
     levelNum++;
     userMemory =[];

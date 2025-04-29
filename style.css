@@ -139,7 +139,17 @@ a {
 
 #hidden-input {
     position: absolute;
-    top: -100px; /* Hide off-screen */
-    opacity: 0;
+    top: -100px; 
+    opacity: 1;
   }
 
+  @media (max-width : 450px) {
+   #btn{
+     position : relative;
+     left: 15%;
+   }
+   .box{
+    position : relative;
+    left: 6%;
+   }
+  }
