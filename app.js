@@ -19,7 +19,7 @@ function isMobileOrTablet() {
   }
   
   if (isMobileOrTablet()) {
-    console.log("📱 Mobile or tablet detected");
+      level.append("Mobile");
     input.style.opacity = 1; // make input slightly visible to ensure focus
     input.focus();
   } 
