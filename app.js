@@ -18,7 +18,25 @@ const Sound2 = new Audio("Click2.wav");
 Sound2.load();
 
 const input = document.getElementById('hidden-input');
+<<<<<<< HEAD
 input.focus();
+=======
+
+function isMobileOrTablet() {
+    const ua = navigator.userAgent;
+  
+    return /Android|iPhone|iPad|iPod|Mobile|Tablet/i.test(ua);
+  }
+  
+  if (isMobileOrTablet()) {
+      let button = document.createElement("btn");
+      button.innerText = "Tap to start";
+      level.append(button);
+    input.style.opacity = 1; // make input slightly visible to ensure focus
+    input.focus();
+  } 
+
+>>>>>>> 67e2e65aaf5596c2d1aa3d25c5f7a1e016752f65
  input.addEventListener('input', (e) => {
       if (input.value.length > 0) {
        startGame();
