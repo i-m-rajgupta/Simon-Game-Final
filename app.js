@@ -10,24 +10,26 @@ let gameMemory = [];
 let userMemory =[];
 
 let color;
-
-let isMobile = /iPhone|iPad|Android|Mobile/i.test(navigator.userAgent);
 const input = document.getElementById('hidden-input');
-// const button = document.getElementById('start-button');
 
- if (isMobile) {
-      button.style.display = 'inline-block';
-      input.style.opacity = 1; // make input slightly visible to ensure focus
-      input.focus();
-    }
+function isMobileOrTablet() {
+    const ua = navigator.userAgent;
+  
+    return /Android|iPhone|iPad|iPod|Mobile|Tablet/i.test(ua);
+  }
+  
+  if (isMobileOrTablet()) {
+    console.log("📱 Mobile or tablet detected");
+    input.style.opacity = 1; // make input slightly visible to ensure focus
+    input.focus();
+  } 
+
  input.addEventListener('input', (e) => {
       if (input.value.length > 0) {
        startGame();
       }
     });     
 function startGame() {
-      // alert("🎮 Game Started!");
-      // // Your game start logic here
       levelUp();
       input.blur();         // Remove focus
       input.style.display = "none"; // Hide input completely 
@@ -90,9 +92,6 @@ function blink(color){
     setTimeout(()=>{
         div.classList.remove("blink");
       },totalTime);
-    // div.addEventListener('animationend', () => {
-    //     div.classList.remove("blink");
-    // }, { once: true });
 }
 
 
