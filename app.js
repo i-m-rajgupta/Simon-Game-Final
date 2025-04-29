@@ -38,13 +38,12 @@ input.focus();
       }
     });     
 function startGame() {
-    if(isStarted == false){
         levelUp();
         isStarted = true;
       input.blur();         // Remove focus
       input.style.display = "none";
      } 
-    }
+    
 
 let body = document.querySelector("body");
 function levelUp(){
