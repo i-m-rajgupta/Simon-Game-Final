@@ -19,7 +19,9 @@ function isMobileOrTablet() {
   }
   
   if (isMobileOrTablet()) {
-      level.append("Mobile");
+      let button = document.createElement("btn");
+      button.innerText = "Tap to start";
+      level.append(button);
     input.style.opacity = 1; // make input slightly visible to ensure focus
     input.focus();
   } 
