@@ -19,6 +19,8 @@ Sound2.load();
 
 const input = document.getElementById('hidden-input');
 
+input.focus();
+
  input.addEventListener('input', (e) => {
       if (input.value.length > 0) {
        startGame();
@@ -129,3 +131,4 @@ div.addEventListener("click",function(event){
      userMemory.push(userColor);
      checkAns(userColor,userMemory.length-1);
 })};
+
